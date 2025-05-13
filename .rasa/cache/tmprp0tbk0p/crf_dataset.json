@@ -1,0 +1,540 @@
+[
+  [
+    {
+      "text": "Ich",
+      "pos_tag": null,
+      "pattern": {},
+      "dense_features": [],
+      "entity_tag": "O",
+      "entity_role_tag": "O",
+      "entity_group_tag": "O"
+    },
+    {
+      "text": "bin",
+      "pos_tag": null,
+      "pattern": {},
+      "dense_features": [],
+      "entity_tag": "O",
+      "entity_role_tag": "O",
+      "entity_group_tag": "O"
+    },
+    {
+      "text": "175",
+      "pos_tag": null,
+      "pattern": {},
+      "dense_features": [],
+      "entity_tag": "U-height",
+      "entity_role_tag": "O",
+      "entity_group_tag": "O"
+    },
+    {
+      "text": "cm",
+      "pos_tag": null,
+      "pattern": {},
+      "dense_features": [],
+      "entity_tag": "O",
+      "entity_role_tag": "O",
+      "entity_group_tag": "O"
+    },
+    {
+      "text": "groß",
+      "pos_tag": null,
+      "pattern": {},
+      "dense_features": [],
+      "entity_tag": "O",
+      "entity_role_tag": "O",
+      "entity_group_tag": "O"
+    },
+    {
+      "text": "wiege",
+      "pos_tag": null,
+      "pattern": {},
+      "dense_features": [],
+      "entity_tag": "O",
+      "entity_role_tag": "O",
+      "entity_group_tag": "O"
+    },
+    {
+      "text": "70",
+      "pos_tag": null,
+      "pattern": {},
+      "dense_features": [],
+      "entity_tag": "U-weight",
+      "entity_role_tag": "O",
+      "entity_group_tag": "O"
+    },
+    {
+      "text": "kg",
+      "pos_tag": null,
+      "pattern": {},
+      "dense_features": [],
+      "entity_tag": "O",
+      "entity_role_tag": "O",
+      "entity_group_tag": "O"
+    },
+    {
+      "text": "bin",
+      "pos_tag": null,
+      "pattern": {},
+      "dense_features": [],
+      "entity_tag": "O",
+      "entity_role_tag": "O",
+      "entity_group_tag": "O"
+    },
+    {
+      "text": "28",
+      "pos_tag": null,
+      "pattern": {},
+      "dense_features": [],
+      "entity_tag": "U-age",
+      "entity_role_tag": "O",
+      "entity_group_tag": "O"
+    },
+    {
+      "text": "Jahre",
+      "pos_tag": null,
+      "pattern": {},
+      "dense_features": [],
+      "entity_tag": "O",
+      "entity_role_tag": "O",
+      "entity_group_tag": "O"
+    },
+    {
+      "text": "alt",
+      "pos_tag": null,
+      "pattern": {},
+      "dense_features": [],
+      "entity_tag": "O",
+      "entity_role_tag": "O",
+      "entity_group_tag": "O"
+    },
+    {
+      "text": "und",
+      "pos_tag": null,
+      "pattern": {},
+      "dense_features": [],
+      "entity_tag": "O",
+      "entity_role_tag": "O",
+      "entity_group_tag": "O"
+    },
+    {
+      "text": "will",
+      "pos_tag": null,
+      "pattern": {},
+      "dense_features": [],
+      "entity_tag": "O",
+      "entity_role_tag": "O",
+      "entity_group_tag": "O"
+    },
+    {
+      "text": "Muskelaufbau",
+      "pos_tag": null,
+      "pattern": {},
+      "dense_features": [],
+      "entity_tag": "U-goal_type",
+      "entity_role_tag": "O",
+      "entity_group_tag": "O"
+    }
+  ],
+  [
+    {
+      "text": "Größe",
+      "pos_tag": null,
+      "pattern": {},
+      "dense_features": [],
+      "entity_tag": "O",
+      "entity_role_tag": "O",
+      "entity_group_tag": "O"
+    },
+    {
+      "text": "180cm",
+      "pos_tag": null,
+      "pattern": {},
+      "dense_features": [],
+      "entity_tag": "O",
+      "entity_role_tag": "O",
+      "entity_group_tag": "O"
+    },
+    {
+      "text": "Gewicht",
+      "pos_tag": null,
+      "pattern": {},
+      "dense_features": [],
+      "entity_tag": "O",
+      "entity_role_tag": "O",
+      "entity_group_tag": "O"
+    },
+    {
+      "text": "80kg",
+      "pos_tag": null,
+      "pattern": {},
+      "dense_features": [],
+      "entity_tag": "O",
+      "entity_role_tag": "O",
+      "entity_group_tag": "O"
+    },
+    {
+      "text": "Alter",
+      "pos_tag": null,
+      "pattern": {},
+      "dense_features": [],
+      "entity_tag": "O",
+      "entity_role_tag": "O",
+      "entity_group_tag": "O"
+    },
+    {
+      "text": "30",
+      "pos_tag": null,
+      "pattern": {},
+      "dense_features": [],
+      "entity_tag": "U-age",
+      "entity_role_tag": "O",
+      "entity_group_tag": "O"
+    },
+    {
+      "text": "Ziel",
+      "pos_tag": null,
+      "pattern": {},
+      "dense_features": [],
+      "entity_tag": "O",
+      "entity_role_tag": "O",
+      "entity_group_tag": "O"
+    },
+    {
+      "text": "Gewichtsverlust",
+      "pos_tag": null,
+      "pattern": {},
+      "dense_features": [],
+      "entity_tag": "U-goal_type",
+      "entity_role_tag": "O",
+      "entity_group_tag": "O"
+    }
+  ],
+  [
+    {
+      "text": "Profil",
+      "pos_tag": null,
+      "pattern": {},
+      "dense_features": [],
+      "entity_tag": "O",
+      "entity_role_tag": "O",
+      "entity_group_tag": "O"
+    },
+    {
+      "text": "165",
+      "pos_tag": null,
+      "pattern": {},
+      "dense_features": [],
+      "entity_tag": "B-height",
+      "entity_role_tag": "O",
+      "entity_group_tag": "O"
+    },
+    {
+      "text": "cm",
+      "pos_tag": null,
+      "pattern": {},
+      "dense_features": [],
+      "entity_tag": "L-height",
+      "entity_role_tag": "O",
+      "entity_group_tag": "O"
+    },
+    {
+      "text": "60",
+      "pos_tag": null,
+      "pattern": {},
+      "dense_features": [],
+      "entity_tag": "B-weight",
+      "entity_role_tag": "O",
+      "entity_group_tag": "O"
+    },
+    {
+      "text": "kg",
+      "pos_tag": null,
+      "pattern": {},
+      "dense_features": [],
+      "entity_tag": "L-weight",
+      "entity_role_tag": "O",
+      "entity_group_tag": "O"
+    },
+    {
+      "text": "25",
+      "pos_tag": null,
+      "pattern": {},
+      "dense_features": [],
+      "entity_tag": "U-age",
+      "entity_role_tag": "O",
+      "entity_group_tag": "O"
+    },
+    {
+      "text": "Ziel",
+      "pos_tag": null,
+      "pattern": {},
+      "dense_features": [],
+      "entity_tag": "O",
+      "entity_role_tag": "O",
+      "entity_group_tag": "O"
+    },
+    {
+      "text": "Ausdauer",
+      "pos_tag": null,
+      "pattern": {},
+      "dense_features": [],
+      "entity_tag": "U-goal_type",
+      "entity_role_tag": "O",
+      "entity_group_tag": "O"
+    }
+  ],
+  [
+    {
+      "text": "Ich",
+      "pos_tag": null,
+      "pattern": {},
+      "dense_features": [],
+      "entity_tag": "O",
+      "entity_role_tag": "O",
+      "entity_group_tag": "O"
+    },
+    {
+      "text": "bin",
+      "pos_tag": null,
+      "pattern": {},
+      "dense_features": [],
+      "entity_tag": "O",
+      "entity_role_tag": "O",
+      "entity_group_tag": "O"
+    },
+    {
+      "text": "190cm",
+      "pos_tag": null,
+      "pattern": {},
+      "dense_features": [],
+      "entity_tag": "U-height",
+      "entity_role_tag": "O",
+      "entity_group_tag": "O"
+    },
+    {
+      "text": "90kg",
+      "pos_tag": null,
+      "pattern": {},
+      "dense_features": [],
+      "entity_tag": "U-weight",
+      "entity_role_tag": "O",
+      "entity_group_tag": "O"
+    },
+    {
+      "text": "35",
+      "pos_tag": null,
+      "pattern": {},
+      "dense_features": [],
+      "entity_tag": "U-age",
+      "entity_role_tag": "O",
+      "entity_group_tag": "O"
+    },
+    {
+      "text": "und",
+      "pos_tag": null,
+      "pattern": {},
+      "dense_features": [],
+      "entity_tag": "O",
+      "entity_role_tag": "O",
+      "entity_group_tag": "O"
+    },
+    {
+      "text": "möchte",
+      "pos_tag": null,
+      "pattern": {},
+      "dense_features": [],
+      "entity_tag": "O",
+      "entity_role_tag": "O",
+      "entity_group_tag": "O"
+    },
+    {
+      "text": "Definition",
+      "pos_tag": null,
+      "pattern": {},
+      "dense_features": [],
+      "entity_tag": "U-goal_type",
+      "entity_role_tag": "O",
+      "entity_group_tag": "O"
+    }
+  ],
+  [
+    {
+      "text": "hi",
+      "pos_tag": null,
+      "pattern": {},
+      "dense_features": [],
+      "entity_tag": "O",
+      "entity_role_tag": "O",
+      "entity_group_tag": "O"
+    }
+  ],
+  [
+    {
+      "text": "hallo",
+      "pos_tag": null,
+      "pattern": {},
+      "dense_features": [],
+      "entity_tag": "O",
+      "entity_role_tag": "O",
+      "entity_group_tag": "O"
+    }
+  ],
+  [
+    {
+      "text": "guten",
+      "pos_tag": null,
+      "pattern": {},
+      "dense_features": [],
+      "entity_tag": "O",
+      "entity_role_tag": "O",
+      "entity_group_tag": "O"
+    },
+    {
+      "text": "Morgen",
+      "pos_tag": null,
+      "pattern": {},
+      "dense_features": [],
+      "entity_tag": "O",
+      "entity_role_tag": "O",
+      "entity_group_tag": "O"
+    }
+  ],
+  [
+    {
+      "text": "hey",
+      "pos_tag": null,
+      "pattern": {},
+      "dense_features": [],
+      "entity_tag": "O",
+      "entity_role_tag": "O",
+      "entity_group_tag": "O"
+    }
+  ],
+  [
+    {
+      "text": "tschüss",
+      "pos_tag": null,
+      "pattern": {},
+      "dense_features": [],
+      "entity_tag": "O",
+      "entity_role_tag": "O",
+      "entity_group_tag": "O"
+    }
+  ],
+  [
+    {
+      "text": "bis",
+      "pos_tag": null,
+      "pattern": {},
+      "dense_features": [],
+      "entity_tag": "O",
+      "entity_role_tag": "O",
+      "entity_group_tag": "O"
+    },
+    {
+      "text": "bald",
+      "pos_tag": null,
+      "pattern": {},
+      "dense_features": [],
+      "entity_tag": "O",
+      "entity_role_tag": "O",
+      "entity_group_tag": "O"
+    }
+  ],
+  [
+    {
+      "text": "auf",
+      "pos_tag": null,
+      "pattern": {},
+      "dense_features": [],
+      "entity_tag": "O",
+      "entity_role_tag": "O",
+      "entity_group_tag": "O"
+    },
+    {
+      "text": "Wiedersehen",
+      "pos_tag": null,
+      "pattern": {},
+      "dense_features": [],
+      "entity_tag": "O",
+      "entity_role_tag": "O",
+      "entity_group_tag": "O"
+    }
+  ],
+  [
+    {
+      "text": "ciao",
+      "pos_tag": null,
+      "pattern": {},
+      "dense_features": [],
+      "entity_tag": "O",
+      "entity_role_tag": "O",
+      "entity_group_tag": "O"
+    }
+  ],
+  [
+    {
+      "text": "ja",
+      "pos_tag": null,
+      "pattern": {},
+      "dense_features": [],
+      "entity_tag": "O",
+      "entity_role_tag": "O",
+      "entity_group_tag": "O"
+    }
+  ],
+  [
+    {
+      "text": "genau",
+      "pos_tag": null,
+      "pattern": {},
+      "dense_features": [],
+      "entity_tag": "O",
+      "entity_role_tag": "O",
+      "entity_group_tag": "O"
+    }
+  ],
+  [
+    {
+      "text": "richtig",
+      "pos_tag": null,
+      "pattern": {},
+      "dense_features": [],
+      "entity_tag": "O",
+      "entity_role_tag": "O",
+      "entity_group_tag": "O"
+    }
+  ],
+  [
+    {
+      "text": "nein",
+      "pos_tag": null,
+      "pattern": {},
+      "dense_features": [],
+      "entity_tag": "O",
+      "entity_role_tag": "O",
+      "entity_group_tag": "O"
+    }
+  ],
+  [
+    {
+      "text": "nicht",
+      "pos_tag": null,
+      "pattern": {},
+      "dense_features": [],
+      "entity_tag": "O",
+      "entity_role_tag": "O",
+      "entity_group_tag": "O"
+    },
+    {
+      "text": "wirklich",
+      "pos_tag": null,
+      "pattern": {},
+      "dense_features": [],
+      "entity_tag": "O",
+      "entity_role_tag": "O",
+      "entity_group_tag": "O"
+    }
+  ]
+]

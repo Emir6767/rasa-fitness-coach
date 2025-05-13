@@ -1,0 +1,29 @@
+version: "3.1"
+nlu:
+- intent: greet
+  examples: |
+    - Hallo
+    - Hi
+    - Hey
+- intent: goodbye
+  examples: |
+    - Tschüss
+    - Auf Wiedersehen
+    - Bis später
+- intent: set_profile
+  examples: |
+    # Komplettsätze
+    - Ich bin [179 cm](height) groß, wiege [80 kg](weight), bin [23](age) Jahre alt und möchte [Muskelaufbau](goal_type).
+    - Größe [180](height)cm, Gewicht [75](weight)kg, Alter [30](age), Ziel [Definition](goal_type).
+    - [170](height) [65](weight) 25 Jahre Fettabbau
+
+    # Einzeiler für jeden Slot
+    - Ich bin [179](height) cm groß.
+    - [179](height)cm
+    - Ich wiege [80 kg](weight).
+    - [80](weight)kg
+    - [68](weight) kg
+    - Ich bin [23](age) Jahre alt.
+    - [30](age)
+    - Mein Ziel ist [Muskelaufbau](goal_type).
+    - Ich möchte [Fettabbau](goal_type).

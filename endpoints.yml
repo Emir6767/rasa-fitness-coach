@@ -1,0 +1,5 @@
+# endpoints.yml
+
+action_endpoint:
+  # URL, unter der dein Action-Server lauscht
+  url: "http://localhost:5055/webhook"

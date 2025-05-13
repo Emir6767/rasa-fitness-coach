@@ -1,0 +1,44 @@
+[
+  {
+    "tag_name": "entity",
+    "ids_to_tags": {
+      "1": "B-age",
+      "2": "I-age",
+      "3": "L-age",
+      "4": "U-age",
+      "5": "B-goal_type",
+      "6": "I-goal_type",
+      "7": "L-goal_type",
+      "8": "U-goal_type",
+      "9": "B-height",
+      "10": "I-height",
+      "11": "L-height",
+      "12": "U-height",
+      "13": "B-weight",
+      "14": "I-weight",
+      "15": "L-weight",
+      "16": "U-weight",
+      "0": "O"
+    },
+    "tags_to_ids": {
+      "B-age": 1,
+      "I-age": 2,
+      "L-age": 3,
+      "U-age": 4,
+      "B-goal_type": 5,
+      "I-goal_type": 6,
+      "L-goal_type": 7,
+      "U-goal_type": 8,
+      "B-height": 9,
+      "I-height": 10,
+      "L-height": 11,
+      "U-height": 12,
+      "B-weight": 13,
+      "I-weight": 14,
+      "L-weight": 15,
+      "U-weight": 16,
+      "O": 0
+    },
+    "num_tags": 17
+  }
+]

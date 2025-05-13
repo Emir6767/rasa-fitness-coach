@@ -1,0 +1,24 @@
+version: "3.1"
+language: de
+
+pipeline:
+  - name: WhitespaceTokenizer
+  - name: RegexFeaturizer
+    use_regexes: data/regex.yml
+  - name: LexicalSyntacticFeaturizer
+  - name: CountVectorsFeaturizer
+  - name: RegexEntityExtractor
+    use_regexes: data/regex.yml
+  - name: DIETClassifier
+    epochs: 100
+  - name: EntitySynonymMapper
+  - name: CRFEntityExtractor
+
+
+policies:
+- name: MemoizationPolicy
+- name: RulePolicy
+- name: TEDPolicy
+  max_history: 5
+  epochs: 100
+assistant_id: 20250513-131342-matching-burgundy

@@ -1,0 +1,5 @@
+﻿.venv/
+__pycache__/
+*.pyc
+fitness_coach.db
+.DS_Store

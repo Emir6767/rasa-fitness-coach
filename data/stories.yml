@@ -1,0 +1,12 @@
+version: "3.1"
+stories:
+- story: Happy Path Profil setzen
+  steps:
+    - intent: set_profile
+    - action: action_set_profile
+    - action: action_listen
+    - action: action_set_profile
+    - action: action_listen
+    - action: action_set_profile
+    - action: action_listen
+    - action: action_set_profile

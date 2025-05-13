@@ -1,0 +1,59 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - set_profile
+
+entities:
+  - height
+  - weight
+  - age
+  - goal_type
+
+slots:
+  height:
+    type: float
+    mappings:
+      - type: from_entity
+        entity: height
+  weight:
+    type: float
+    mappings:
+      - type: from_entity
+        entity: weight
+  age:
+    type: float
+    mappings:
+      - type: from_entity
+        entity: age
+  goal_type:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: goal_type
+
+responses:
+  utter_greet:
+    - text: "Hey! Ich bin dein Fitness-Coach. Wie kann ich dir helfen?"
+  utter_goodbye:
+    - text: "Viel Erfolg! Bis zum nächsten Mal. 💪"
+  utter_ask_height:
+    - text: "Wie groß bist du in cm?"
+  utter_ask_weight:
+    - text: "Wie viel wiegst du in kg?"
+  utter_ask_age:
+    - text: "Wie alt bist du?"
+  utter_ask_goal:
+    - text: "Was ist dein Fitness-Ziel? (z.B. Muskelaufbau)"
+  utter_profile_saved:
+    - text: "Dein Profil habe ich gespeichert! 👍"
+  utter_profile_updated:
+    - text: "Dein Profil habe ich aktualisiert! 👍"
+
+actions:
+  - action_set_profile
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

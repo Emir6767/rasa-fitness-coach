@@ -1,0 +1,9 @@
+version: "3.1"
+rules:
+- rule: Profile-Dialog mit Nachfragen
+  steps:
+  - intent: set_profile
+  - action: action_set_profile   # fragt nach, wenn was fehlt
+  - action: action_set_profile   # falls der User jetzt fehlende slot gibt
+  - action: action_set_profile
+  - action: action_set_profile   # viermal in Summe – stellt sicher, dass alle Slots abgefragt werden
