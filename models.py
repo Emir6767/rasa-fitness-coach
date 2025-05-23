@@ -15,7 +15,7 @@ class UserProfile(Base):
     height = Column(Float)
     weight = Column(Float)
     age = Column(Integer)
-    goal_typ = Column(String)
+    goal_type = Column(String)
     created_at = Column(DateTime, default=datetime.datetime.utcnow)
 
 # 3. Engine & Session-Factory

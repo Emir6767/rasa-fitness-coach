@@ -1,12 +1,7 @@
 version: "3.1"
 stories:
-- story: Happy Path Profil setzen
-  steps:
-    - intent: set_profile
-    - action: action_set_profile
-    - action: action_listen
-    - action: action_set_profile
-    - action: action_listen
-    - action: action_set_profile
-    - action: action_listen
-    - action: action_set_profile
+# In Rasa 3.x werden die meisten Dialoge über Rules abgedeckt.
+# Stories sind für komplexere, nicht-regelbasierte Pfade gedacht.
+# Aktuell keine spezifischen Stories nötig, wenn Regeln ausreichen.
+# Du kannst hier später komplexere, mehrschrittige Konversationen hinzufügen,
+# die nicht von den Regeln abgedeckt werden.

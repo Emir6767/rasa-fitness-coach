@@ -1,0 +1,122 @@
+
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_little_great
+  - mood_unhappy
+  - ask_for_profile
+  - inform_height
+  - inform_weight
+  - inform_age
+  - inform_goal_type
+  - request_exercises # NEU: Für Übungsempfehlungen
+  - request_nutrition_advice # NEU: Für Ernährungsberatung
+  - inform_musclegroup # NEU: Für die Muskelgruppe
+  - inform_nutrition_goal # NEU: Für das Ernährungsziel
+
+entities:
+  - height
+  - weight
+  - age
+  - goal_type
+  - musclegroup # NEU
+  - nutrition_goal # NEU
+
+slots:
+  height:
+    type: float
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: height
+  weight:
+    type: float
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: weight
+  age:
+    type: float
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: age
+  goal_type:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: goal_type
+        # Hier könntest du auch from_intent nutzen, wenn du spezifische Intents für Ziele hast
+  musclegroup: # NEU
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: musclegroup
+  nutrition_goal: # NEU
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: nutrition_goal
+
+
+forms:
+  profile_form:
+    required_slots:
+      - height
+      - weight
+      - age
+      - goal_type
+
+responses:
+  utter_greet:
+    - text: "Hallo! Ich bin dein Fitness-Coach. Wie kann ich dir helfen?"
+  utter_goodbye:
+    - text: "Bis bald! Bleib fit!"
+  utter_happy:
+    - text: "Super! Das freut mich."
+  utter_cheer_up:
+    - text: "Kopf hoch! Ich bin hier, um dich zu unterstützen."
+  utter_did_that_help:
+    - text: "Hat das geholfen?"
+  utter_ask_for_profile:
+    - text: "Ich kann dir besser helfen, wenn ich mehr über dich weiß. Soll ich ein kurzes Profil erstellen?"
+  utter_ask_height:
+    - text: "Wie groß bist du in cm?"
+  utter_ask_weight:
+    - text: "Wie viel wiegst du in kg?"
+  utter_ask_age:
+    - text: "Wie alt bist du?"
+  utter_ask_goal:
+    - text: "Was ist dein Fitness-Ziel? (z.B. Muskelaufbau, Abnehmen, Muskelerhalt)"
+  utter_profile_saved:
+    - text: "Dein Profil habe ich gespeichert! 👍"
+  utter_ask_musclegroup: # NEU
+    - text: "Für welche Muskelgruppe suchst du Übungen? (z.B. Brust, Beine, Rücken)"
+  utter_ask_nutrition_goal: # NEU
+    - text: "Geht es dir um Abnehmen, Muskelaufbau oder Muskelerhalt?"
+  utter_no_exercises_found: # NEU
+    - text: "Entschuldige, ich habe keine Übungen für diese Muskelgruppe gefunden. Kannst du eine andere nennen?"
+  utter_no_nutrition_info: # NEU
+    - text: "Dazu habe ich leider keine spezifischen Informationen. Kannst du dein Ernährungsziel genauer beschreiben?"
+  utter_unclear: # NEU (optional, für Fallbacks)
+    - text: "Das habe ich leider nicht verstanden. Kannst du deine Frage anders formulieren?"
+
+actions:
+  - validate_profile_form
+  - profile_form
+  - action_submit_profile
+  - action_provide_exercises # NEU: Deine Custom Action für Übungen
+  - action_provide_nutrition_advice # NEU: Deine Custom Action für Ernährung
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+  

@@ -1,0 +1,86 @@
+{
+  "type": "MaxHistoryTrackerFeaturizer",
+  "state_featurizer": {
+    "action_texts": [],
+    "entity_tag_specs": [],
+    "feature_states": {
+      "intent": {
+        "affirm": 0,
+        "ask_for_profile": 1,
+        "back": 2,
+        "deny": 3,
+        "goodbye": 4,
+        "greet": 5,
+        "inform_age": 6,
+        "inform_goal_type": 7,
+        "inform_height": 8,
+        "inform_musclegroup": 9,
+        "inform_nutrition_goal": 10,
+        "inform_weight": 11,
+        "mood_great": 12,
+        "mood_little_great": 13,
+        "mood_unhappy": 14,
+        "nlu_fallback": 15,
+        "out_of_scope": 16,
+        "request_exercises": 17,
+        "request_nutrition_advice": 18,
+        "restart": 19,
+        "session_start": 20
+      },
+      "action_name": {
+        "action_listen": 0,
+        "action_restart": 1,
+        "action_session_start": 2,
+        "action_default_fallback": 3,
+        "action_deactivate_loop": 4,
+        "action_revert_fallback_events": 5,
+        "action_default_ask_affirmation": 6,
+        "action_default_ask_rephrase": 7,
+        "action_two_stage_fallback": 8,
+        "action_unlikely_intent": 9,
+        "action_back": 10,
+        "...": 11,
+        "action_extract_slots": 12,
+        "validate_profile_form": 13,
+        "profile_form": 14,
+        "action_submit_profile": 15,
+        "action_provide_exercises": 16,
+        "action_provide_nutrition_advice": 17,
+        "utter_ask_age": 18,
+        "utter_ask_for_profile": 19,
+        "utter_ask_goal": 20,
+        "utter_ask_height": 21,
+        "utter_ask_musclegroup": 22,
+        "utter_ask_nutrition_goal": 23,
+        "utter_ask_weight": 24,
+        "utter_cheer_up": 25,
+        "utter_did_that_help": 26,
+        "utter_goodbye": 27,
+        "utter_greet": 28,
+        "utter_happy": 29,
+        "utter_no_exercises_found": 30,
+        "utter_no_nutrition_info": 31,
+        "utter_profile_saved": 32,
+        "utter_unclear": 33
+      },
+      "entities": {
+        "age": 0,
+        "goal_type": 1,
+        "height": 2,
+        "musclegroup": 3,
+        "nutrition_goal": 4,
+        "weight": 5
+      },
+      "slots": {
+        "goal_type_0": 0,
+        "musclegroup_0": 1,
+        "nutrition_goal_0": 2
+      },
+      "active_loop": {
+        "profile_form": 0
+      }
+    }
+  },
+  "remove_duplicates": true,
+  "max_history": 5
+}

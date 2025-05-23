@@ -1,0 +1,39 @@
+{
+  "uebungen": [
+    {
+      "name": "Liegestütze",
+      "muskelgruppen": ["Brust", "Schultern", "Trizeps"],
+      "beschreibung": "Klassische Übung für Brust, Schultern und Trizeps. Auf den Boden legen, Hände schulterbreit auseinander, Körper anspannen und hochdrücken.",
+      "schwierigkeitsgrad": "Anfänger",
+      "equipment": ["Keine"]
+    },
+    {
+      "name": "Bankdrücken",
+      "muskelgruppen": ["Brust", "Schultern", "Trizeps"],
+      "beschreibung": "Effektive Übung für die Brustmuskulatur mit der Langhantel oder Kurzhanteln auf einer Flachbank.",
+      "schwierigkeitsgrad": "Fortgeschritten",
+      "equipment": ["Langhantel", "Hantelbank"]
+    },
+    {
+      "name": "Kniebeugen",
+      "muskelgruppen": ["Beine", "Po"],
+      "beschreibung": "Grundübung für die Beinmuskulatur. Hüfte nach hinten schieben, als ob man sich setzen würde, und wieder aufrichten.",
+      "schwierigkeitsgrad": "Anfänger",
+      "equipment": ["Keine", "Langhantel (optional)"]
+    },
+    {
+      "name": "Kreuzheben",
+      "muskelgruppen": ["Rücken", "Beine", "Po"],
+      "beschreibung": "Komplexe Ganzkörperübung, die primär den unteren Rücken und die Beinmuskulatur beansprucht.",
+      "schwierigkeitsgrad": "Fortgeschritten",
+      "equipment": ["Langhantel"]
+    },
+    {
+      "name": "Plank",
+      "muskelgruppen": ["Bauch", "Rücken", "Ganzkörper"],
+      "beschreibung": "Statische Übung zur Stärkung der Rumpfmuskulatur. Körperspannung halten wie ein Brett.",
+      "schwierigkeitsgrad": "Anfänger",
+      "equipment": ["Keine"]
+    }
+  ]
+}

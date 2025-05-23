@@ -1,0 +1,44 @@
+{
+  "ernaehrungsziele": [
+    {
+      "ziel": "Abnehmen",
+      "prinzipien": [
+        "Kaloriendefizit (weniger Kalorien zu sich nehmen als verbrauchen)",
+        "Hoher Proteinanteil (sättigt, Muskelerhalt)",
+        "Komplexe Kohlenhydrate (Vollkornprodukte, Gemüse)",
+        "Gesunde Fette (Avocado, Nüsse, Olivenöl)",
+        "Viel Wasser trinken",
+        "Verzicht auf zuckerhaltige Getränke und verarbeitete Lebensmittel"
+      ],
+      "zusatzinfo": "Ein moderates Defizit von 300-500 Kalorien pro Tag ist oft ideal. Achte auf eine ausgewogene Makronährstoffverteilung."
+    },
+    {
+      "ziel": "Muskelaufbau",
+      "prinzipien": [
+        "Leichter Kalorienüberschuss (mehr Kalorien als verbrauchen)",
+        "Hoher Proteinanteil (mind. 1.6g-2.2g pro kg Körpergewicht)",
+        "Ausreichend Kohlenhydrate (Energie für Training und Regeneration)",
+        "Gesunde Fette",
+        "Regelmäßige Mahlzeiten über den Tag verteilt"
+      ],
+      "zusatzinfo": "Kombiniere dies mit regelmäßigem Krafttraining. Die Qualität der Kalorien ist entscheidend."
+    },
+    {
+      "ziel": "Muskelerhalt",
+      "prinzipien": [
+        "Kalorienbedarf decken (weder Überschuss noch Defizit)",
+        "Ausreichend Protein (wichtig für den Erhalt der Muskulatur)",
+        "Ausgewogene Makronährstoffverteilung",
+        "Genug Vitamine und Mineralien"
+      ],
+      "zusatzinfo": "Dies ist das Ziel, wenn du dein aktuelles Gewicht und deine Körperzusammensetzung beibehalten möchtest."
+    }
+  ],
+  "allgemeine_tipps": [
+    "Iss ausreichend Gemüse und Obst.",
+    "Bevorzuge Vollkornprodukte gegenüber Weißmehlprodukten.",
+    "Trinke ausreichend Wasser.",
+    "Bereite deine Mahlzeiten oft selbst zu, um Kontrolle über die Zutaten zu haben.",
+    "Höre auf deinen Körper und iss, wenn du hungrig bist, hör auf, wenn du satt bist (achtsames Essen)."
+  ]
+}

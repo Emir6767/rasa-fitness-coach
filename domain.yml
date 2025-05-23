@@ -1,8 +1,112 @@
 version: "3.1"
+language: de
 
-# … intents, entities und slots bleiben wie gehabt …
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_little_great
+  - mood_unhappy
+  - ask_for_profile
+  - inform_height
+  - inform_weight
+  - inform_age
+  - inform_goal_type
+  - request_exercises
+  - inform_musclegroup
+  - request_nutrition_advice
+  - inform_nutrition_goal # Dieser Intent wird jetzt nur noch für die Entitätserkennung genutzt
+  - request_nutrition_plan_tips
+  - inform_gender
+  - inform_body_fat_percentage
+  - inform_activity_level_sport
+  - inform_activity_level_daily
+  - inform_diet_goal
+  - stop # Für Formularabbruch
 
-# 1) Form definieren
+entities:
+  - height
+  - weight
+  - age
+  - goal_type
+  - musclegroup
+  - nutrition_goal
+  - gender
+  - body_fat_percentage
+  - activity_level_sport
+  - activity_level_daily
+  - diet_goal
+
+slots:
+  height:
+    type: float
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: height
+  weight:
+    type: float
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: weight
+  age:
+    type: float
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: age
+  goal_type:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: goal_type
+  musclegroup:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: musclegroup
+  nutrition_goal:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: nutrition_goal
+  gender:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: gender
+  body_fat_percentage:
+    type: float
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: body_fat_percentage
+  activity_level_sport:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: activity_level_sport
+  activity_level_daily:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: activity_level_daily
+  diet_goal:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: diet_goal
+
 forms:
   profile_form:
     required_slots:
@@ -10,9 +114,30 @@ forms:
       - weight
       - age
       - goal_type
+  nutrition_plan_form:
+    required_slots:
+      - gender
+      - age
+      - height
+      - weight
+      - body_fat_percentage
+      - activity_level_sport
+      - activity_level_daily
+      - diet_goal
 
-# 2) Responses zum Abfragen nutzen
 responses:
+  utter_greet:
+    - text: "Hallo! Ich bin dein Fitness-Coach. Wie kann ich dir helfen?"
+  utter_goodbye:
+    - text: "Bis bald! Bleib fit!"
+  utter_happy:
+    - text: "Super! Das freut mich."
+  utter_cheer_up:
+    - text: "Kopf hoch! Ich bin hier, um dich zu unterstützen."
+  utter_did_that_help:
+    - text: "Hat das geholfen?"
+  utter_ask_for_profile:
+    - text: "Ich kann dir besser helfen, wenn ich mehr über dich weiß. Soll ich ein kurzes Profil erstellen?"
   utter_ask_height:
     - text: "Wie groß bist du in cm?"
   utter_ask_weight:
@@ -20,17 +145,51 @@ responses:
   utter_ask_age:
     - text: "Wie alt bist du?"
   utter_ask_goal:
-    - text: "Was ist dein Fitness-Ziel? (z.B. Muskelaufbau)"
+    - text: "Was ist dein Fitness-Ziel? (z.B. Muskelaufbau, Abnehmen, Muskelerhalt)"
   utter_profile_saved:
     - text: "Dein Profil habe ich gespeichert! 👍"
+  utter_ask_musclegroup:
+    - text: "Für welche Muskelgruppe suchst du Übungen? (z.B. Brust, Beine, Rücken)"
+  utter_ask_nutrition_goal:
+    - text: "Geht es dir um Abnehmen, Muskelaufbau oder Muskelerhalt?"
+  utter_no_exercises_found:
+    - text: "Entschuldige, ich habe keine Übungen für diese Muskelgruppe gefunden. Kannst du eine andere nennen?"
+  utter_no_nutrition_info:
+    - text: "Dazu habe ich leider keine spezifischen Informationen. Kannst du dein Ernährungsziel genauer beschreiben?"
+  utter_unclear:
+    - text: "Das habe ich leider nicht verstanden. Kannst du deine Frage anders formulieren?"
+  utter_ask_gender:
+    - text: "Bist du männlich oder weiblich?"
+  utter_ask_body_fat_percentage:
+    - text: "Wie hoch ist dein Körperfettanteil in Prozent? (Zahl, z.B. 15)"
+    - text: "Wenn du dir unsicher bist, hier ein Beispiel zur Einschätzung:"
+  utter_body_fat_male_example:
+    - image: "http://localhost:8000/kfa_mann.jpg"
+      text: "Zur Einschätzung des Körperfettanteils für Männer."
+  utter_body_fat_female_example:
+    - image: "http://localhost:8000/kfa_frau.jpg"
+      text: "Zur Einschätzung des Körperfettanteils für Frauen."
+  utter_ask_activity_level_sport:
+    - text: "Wie oft treibst du Sport pro Woche? (z.B. kein Sport, wenig Sport (1-2x), mäßig Sport (3-4x), viel Sport (5-7x))"
+  utter_ask_activity_level_daily:
+    - text: "Beschreibe deine Alltagsaktivität ohne Sport. (z.B. sitzend, leicht aktiv, mäßig aktiv, sehr aktiv)"
+  utter_ask_diet_goal:
+    - text: "Was ist dein Ernährungsziel? (abnehmen, zunehmen, oder gleichbleiben)"
+  utter_nutrition_plan_calculated:
+    - text: "Dein Ernährungsplan wird berechnet..."
+  utter_form_aborted:
+    - text: "Okay, ich habe das Ausfüllen des Formulars abgebrochen."
 
-# 3) Custom Actions
 actions:
   - validate_profile_form
   - profile_form
   - action_submit_profile
+  - action_provide_exercises
+  - action_provide_nutrition_advice
+  - validate_nutrition_plan_form
+  - nutrition_plan_form
+  - action_calculate_nutrition_plan
 
-# sessions bleiben gleich …
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true

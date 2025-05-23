@@ -1,0 +1,9 @@
+{
+  "rule_only_slots": [
+    "nutrition_goal",
+    "musclegroup"
+  ],
+  "rule_only_loops": [
+    "profile_form"
+  ]
+}

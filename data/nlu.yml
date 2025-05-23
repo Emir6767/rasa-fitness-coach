@@ -1,29 +1,189 @@
 version: "3.1"
 nlu:
-- intent: greet
-  examples: |
-    - Hallo
-    - Hi
-    - Hey
-- intent: goodbye
-  examples: |
-    - Tschüss
-    - Auf Wiedersehen
-    - Bis später
-- intent: set_profile
-  examples: |
-    # Komplettsätze
-    - Ich bin [179 cm](height) groß, wiege [80 kg](weight), bin [23](age) Jahre alt und möchte [Muskelaufbau](goal_type).
-    - Größe [180](height)cm, Gewicht [75](weight)kg, Alter [30](age), Ziel [Definition](goal_type).
-    - [170](height) [65](weight) 25 Jahre Fettabbau
+  - intent: greet
+    examples: |
+      - Hallo
+      - Guten Morgen
+      - Hi
+      - Servus
+      - Grüß Gott
+      - Hello
+      - Hey
+      - Tag
 
-    # Einzeiler für jeden Slot
-    - Ich bin [179](height) cm groß.
-    - [179](height)cm
-    - Ich wiege [80 kg](weight).
-    - [80](weight)kg
-    - [68](weight) kg
-    - Ich bin [23](age) Jahre alt.
-    - [30](age)
-    - Mein Ziel ist [Muskelaufbau](goal_type).
-    - Ich möchte [Fettabbau](goal_type).
+  - intent: goodbye
+    examples: |
+      - Tschüss
+      - Auf Wiedersehen
+      - Bye
+      - Mach's gut
+
+  - intent: affirm
+    examples: |
+      - ja
+      - genau
+      - stimmt
+      - ja, das stimmt
+
+  - intent: deny
+    examples: |
+      - nein
+      - stimmt nicht
+      - gar nicht
+      - nö
+
+  - intent: mood_great
+    examples: |
+      - Ich fühle mich super
+      - Mir geht es gut
+      - Ich bin glücklich
+      - sehr gut
+
+  - intent: mood_little_great
+    examples: |
+      - Es geht
+      - Ganz okay
+      - Könnte besser sein
+      - So lala
+
+  - intent: mood_unhappy
+    examples: |
+      - Ich bin traurig
+      - Mir geht es schlecht
+      - Ich bin enttäuscht
+      - nicht gut
+
+  - intent: ask_for_profile
+    examples: |
+      - Können wir mein Profil anlegen?
+      - Ich möchte mein Profil bearbeiten
+      - Speichere meine Daten
+      - Erstelle ein Profil für mich
+
+  - intent: inform_height
+    examples: |
+      - Ich bin [180]{"entity": "height", "type": "value"} cm groß
+      - Meine Größe ist [1.75]{"entity": "height", "type": "value"} Meter
+      - [170]{"entity": "height", "type": "value"}
+      - [1,85]{"entity": "height", "type": "value"}
+
+  - intent: inform_weight
+    examples: |
+      - Ich wiege [75]{"entity": "weight", "type": "value"} kg
+      - Mein Gewicht ist [68.5]{"entity": "weight", "type": "value"}
+      - [80]{"entity": "weight", "type": "value"} Kilogramm
+      - [90,2]{"entity": "weight", "type": "value"}
+
+  - intent: inform_age
+    examples: |
+      - Ich bin [30]{"entity": "age", "type": "value"} Jahre alt
+      - Mein Alter ist [25]{"entity": "age", "type": "value"}
+      - Ich bin [40]{"entity": "age", "type": "value"}
+      - [18]{"entity": "age", "type": "value"}
+
+  - intent: inform_goal_type
+    examples: |
+      - Mein Ziel ist [Muskelaufbau]{"entity": "goal_type"}
+      - Ich möchte [abnehmen]{"entity": "goal_type"}
+      - Ich will [Muskeln erhalten]{"entity": "goal_type"}
+      - Ich möchte mein [Gewicht halten]{"entity": "goal_type"}
+      - Mein Ziel ist [Fettabbau]{"entity": "goal_type"}
+
+  - intent: request_exercises
+    examples: |
+      - Ich suche Übungen
+      - Zeig mir Übungen
+      - Was kann ich trainieren?
+      - Gib mir Trainingsvorschläge
+      - Brauche Übungsideen
+
+  - intent: inform_musclegroup
+    examples: |
+      - Für die [Brust]{"entity": "musclegroup"}
+      - Ich möchte [Beine]{"entity": "musclegroup"} trainieren
+      - [Rücken]{"entity": "musclegroup"}übungen
+      - Was gibt es für den [Bizeps]{"entity": "musclegroup"}?
+      - Zeig mir [Ganzkörper]{"entity": "musclegroup"}übungen
+      - [Schultern]{"entity": "musclegroup"}
+      - [Bauch]{"entity": "musclegroup"}
+
+  - intent: request_nutrition_advice
+    examples: |
+      - Ich brauche Ernährungstipps
+      - Hilf mir bei meiner Ernährung
+      - Was soll ich essen?
+      - Ich habe Fragen zum Essen
+      - Ernährungsberatung
+      - Ich möchte [abnehmen]{"entity": "nutrition_goal"}
+      - Mein Ziel ist [Muskelaufbau]{"entity": "nutrition_goal"}
+      - Ich will mein [Gewicht halten]{"entity": "nutrition_goal"}
+      - Wie nehme ich [Fett]{"entity": "nutrition_goal"} ab?
+      - Für [Muskelerhalt]{"entity": "nutrition_goal"}
+      - Ernährung für [Muskelaufbau]{"entity": "nutrition_goal"}
+      - [Abnehmen]{"entity": "nutrition_goal"} durch Ernährung
+
+  - intent: request_nutrition_plan_tips
+    examples: |
+      - Ich brauche einen Ernährungsplan.
+      - Hilf mir bei der Ernährung.
+      - Wie berechne ich meinen Kalorienbedarf?
+      - Ernährungsberatung bitte.
+      - Ich möchte einen Plan für meine Ernährung erstellen.
+      - Kalorienrechner
+      - Ich will meinen Bedarf wissen.
+
+  - intent: inform_gender
+    examples: |
+      - Ich bin [männlich]{"entity": "gender"}
+      - Ich bin [weiblich]{"entity": "gender"}
+      - [Mann]{"entity": "gender"}
+      - [Frau]{"entity": "gender"}
+
+  - intent: inform_body_fat_percentage
+    examples: |
+      - Mein Körperfettanteil ist [15]{"entity": "body_fat_percentage"} Prozent.
+      - Ich schätze [20]{"entity": "body_fat_percentage"}.
+      - [18]{"entity": "body_fat_percentage"}%
+      - [12.5]{"entity": "body_fat_percentage"}
+      - Ich bin bei [10]{"entity": "body_fat_percentage"} Prozent Körperfett.
+
+  - intent: inform_activity_level_sport
+    examples: |
+      - Ich mache [kein Sport]{"entity": "activity_level_sport"}.
+      - Ich treibe [wenig Sport]{"entity": "activity_level_sport"}.
+      - Ich trainiere [1-2 Mal pro Woche]{"entity": "activity_level_sport"}.
+      - Ich mache [mäßig Sport]{"entity": "activity_level_sport"}.
+      - [3-4 Mal pro Woche]{"entity": "activity_level_sport"}.
+      - Ich mache [viel Sport]{"entity": "activity_level_sport"}.
+      - [5-7 Mal pro Woche]{"entity": "activity_level_sport"}.
+      - Ich mache [nie Sport]{"entity": "activity_level_sport"}.
+      - Ich trainiere [selten]{"entity": "activity_level_sport"}.
+      - Ich trainiere [oft]{"entity": "activity_level_sport"}.
+
+  - intent: inform_activity_level_daily
+    examples: |
+      - Mein Alltag ist [sitzend]{"entity": "activity_level_daily"}.
+      - Ich habe einen [sitzenden Job]{"entity": "activity_level_daily"}.
+      - Ich bin [leicht aktiv]{"entity": "activity_level_daily"}.
+      - Ich bin [mäßig aktiv]{"entity": "activity_level_daily"}.
+      - Ich bin [sehr aktiv]{"entity": "activity_level_daily"}.
+      - Mein Alltag ist [bürolastig]{"entity": "activity_level_daily"}.
+      - Ich gehe [viel]{"entity": "activity_level_daily"} zu Fuß.
+
+  - intent: inform_diet_goal
+    examples: |
+      - Ich möchte [abnehmen]{"entity": "diet_goal"}.
+      - Mein Ziel ist [Muskelaufbau]{"entity": "diet_goal"}.
+      - Ich möchte [zunehmen]{"entity": "diet_goal"}.
+      - Ich will mein [Gewicht halten]{"entity": "diet_goal"}.
+      - [Gleichbleiben]{"entity": "diet_goal"}.
+      - Ich will [Fett verlieren]{"entity": "diet_goal"}.
+      - Ich will [Muskeln aufbauen]{"entity": "diet_goal"}.
+
+  - intent: stop
+    examples: |
+      - Stopp
+      - Abbruch
+      - Nein, danke
+      - Lass es gut sein
+      - Beenden

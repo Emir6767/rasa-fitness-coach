@@ -1,25 +1,102 @@
 version: "3.1"
+
 rules:
+  - rule: Activate profile form
+    steps:
+      - intent: ask_for_profile
+      - action: profile_form
+      - active_loop: profile_form
 
-# a) Begrüßung
-- rule: Greet user
-  steps:
-    - intent: greet
-    - action: utter_greet
+  - rule: Submit profile form
+    condition:
+      - active_loop: profile_form
+    steps:
+      - action: profile_form
+      - active_loop: null
+      - slot_was_set:
+          - requested_slot: null
+      - action: action_submit_profile
 
-# b) Form aktivieren
-- rule: Profile-Dialog starten
-  steps:
-    - intent: set_profile
-    - action: profile_form
-    - active_loop: profile_form
+  - rule: Say goodbye
+    steps:
+      - intent: goodbye
+      - action: utter_goodbye
 
-# c) Form abschließen
-- rule: Profile-Dialog abschließen
-  condition:
-    - active_loop: profile_form
-  steps:
-    - action: profile_form
-    - active_loop: null
-    - action: action_submit_profile
-    - action: utter_profile_saved
+  - rule: Say greet
+    steps:
+      - intent: greet
+      - action: utter_greet
+
+  - rule: Ask for exercises
+    steps:
+      - intent: request_exercises
+      - action: utter_ask_musclegroup
+
+  - rule: Provide exercises based on musclegroup
+    condition:
+      - slot_was_set:
+          - musclegroup
+    steps:
+      - intent: inform_musclegroup
+      - action: action_provide_exercises
+      - slot_was_set:
+          - musclegroup: null
+
+  - rule: Ask for nutrition goal
+    steps:
+      - intent: request_nutrition_advice
+      - action: utter_ask_nutrition_goal
+
+  - rule: Provide nutrition advice based on goal (simplified)
+    # This rule is simplified as inform_nutrition_goal is now mostly for entity extraction
+    # The main action for nutrition advice is triggered by request_nutrition_advice
+    condition:
+      - slot_was_set:
+          - nutrition_goal
+    steps:
+      - action: action_provide_nutrition_advice
+      - slot_was_set:
+          - nutrition_goal: null
+
+  - rule: Handle user is happy
+    steps:
+      - intent: mood_great
+      - action: utter_happy
+
+  - rule: Handle user is okay
+    steps:
+      - intent: mood_little_great
+      - action: utter_cheer_up
+
+  - rule: Handle user is unhappy
+    steps:
+      - intent: mood_unhappy
+      - action: utter_cheer_up
+
+  - rule: User affirms after question
+    steps:
+      - intent: affirm
+      - action: utter_did_that_help
+
+  - rule: User denies after question
+    steps:
+      - intent: deny
+      - action: utter_goodbye
+
+  - rule: Activate nutrition plan form
+    steps:
+      - intent: request_nutrition_plan_tips
+      - action: nutrition_plan_form
+      - active_loop: nutrition_plan_form
+
+  - rule: Submit nutrition plan form
+    condition:
+      - active_loop: nutrition_plan_form
+    steps:
+      - action: nutrition_plan_form
+      - active_loop: null
+      - slot_was_set:
+          - requested_slot: null
+      - action: action_calculate_nutrition_plan
+
+ 

@@ -1,0 +1,18 @@
+{
+  "0": "affirm",
+  "1": "ask_for_profile",
+  "2": "deny",
+  "3": "goodbye",
+  "4": "greet",
+  "5": "inform_age",
+  "6": "inform_goal_type",
+  "7": "inform_height",
+  "8": "inform_musclegroup",
+  "9": "inform_nutrition_goal",
+  "10": "inform_weight",
+  "11": "mood_great",
+  "12": "mood_little_great",
+  "13": "mood_unhappy",
+  "14": "request_exercises",
+  "15": "request_nutrition_advice"
+}
