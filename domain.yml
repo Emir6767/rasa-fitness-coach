@@ -1,43 +1,18 @@
 version: "3.1"
 
-intents:
-  - greet
-  - goodbye
-  - set_profile
+# … intents, entities und slots bleiben wie gehabt …
 
-entities:
-  - height
-  - weight
-  - age
-  - goal_type
+# 1) Form definieren
+forms:
+  profile_form:
+    required_slots:
+      - height
+      - weight
+      - age
+      - goal_type
 
-slots:
-  height:
-    type: float
-    mappings:
-      - type: from_entity
-        entity: height
-  weight:
-    type: float
-    mappings:
-      - type: from_entity
-        entity: weight
-  age:
-    type: float
-    mappings:
-      - type: from_entity
-        entity: age
-  goal_type:
-    type: text
-    mappings:
-      - type: from_entity
-        entity: goal_type
-
+# 2) Responses zum Abfragen nutzen
 responses:
-  utter_greet:
-    - text: "Hey! Ich bin dein Fitness-Coach. Wie kann ich dir helfen?"
-  utter_goodbye:
-    - text: "Viel Erfolg! Bis zum nächsten Mal. 💪"
   utter_ask_height:
     - text: "Wie groß bist du in cm?"
   utter_ask_weight:
@@ -48,12 +23,14 @@ responses:
     - text: "Was ist dein Fitness-Ziel? (z.B. Muskelaufbau)"
   utter_profile_saved:
     - text: "Dein Profil habe ich gespeichert! 👍"
-  utter_profile_updated:
-    - text: "Dein Profil habe ich aktualisiert! 👍"
 
+# 3) Custom Actions
 actions:
-  - action_set_profile
+  - validate_profile_form
+  - profile_form
+  - action_submit_profile
 
+# sessions bleiben gleich …
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true

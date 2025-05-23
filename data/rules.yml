@@ -1,9 +1,25 @@
 version: "3.1"
 rules:
-- rule: Profile-Dialog mit Nachfragen
+
+# a) Begrüßung
+- rule: Greet user
   steps:
-  - intent: set_profile
-  - action: action_set_profile   # fragt nach, wenn was fehlt
-  - action: action_set_profile   # falls der User jetzt fehlende slot gibt
-  - action: action_set_profile
-  - action: action_set_profile   # viermal in Summe – stellt sicher, dass alle Slots abgefragt werden
+    - intent: greet
+    - action: utter_greet
+
+# b) Form aktivieren
+- rule: Profile-Dialog starten
+  steps:
+    - intent: set_profile
+    - action: profile_form
+    - active_loop: profile_form
+
+# c) Form abschließen
+- rule: Profile-Dialog abschließen
+  condition:
+    - active_loop: profile_form
+  steps:
+    - action: profile_form
+    - active_loop: null
+    - action: action_submit_profile
+    - action: utter_profile_saved

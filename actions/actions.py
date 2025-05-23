@@ -1,58 +1,90 @@
-# actions.py
+# actions/actions.py
 from typing import Any, Text, Dict, List
-from rasa_sdk import Action, Tracker
+import datetime
+from rasa_sdk import Tracker, Action
 from rasa_sdk.executor import CollectingDispatcher
-from rasa_sdk.events import SlotSet
-from models import SessionLocal, UserProfile
+from rasa_sdk.forms import FormValidationAction
+from sqlalchemy.orm import Session
+from models import init_db, SessionLocal, UserProfile
 
-class ActionSetProfile(Action):
+# Tabellen anlegen bei Start
+init_db()
+
+class ValidateProfileForm(FormValidationAction):
     def name(self) -> Text:
-        return "action_set_profile"
+        return "validate_profile_form"
+
+    def validate_height(
+        self,
+        slot_value: Any,
+        dispatcher: CollectingDispatcher,
+        tracker: Tracker,
+        domain: Dict,
+    ) -> Dict[Text, Any]:
+        try:
+            val = float(slot_value)
+            if 50 <= val <= 300:
+                return {"height": val}
+        except:
+            pass
+        dispatcher.utter_message(response="utter_ask_height")
+        return {"height": None}
+
+    def validate_weight(
+        self, slot_value, dispatcher, tracker, domain
+    ) -> Dict[Text, Any]:
+        try:
+            val = float(slot_value)
+            if 20 <= val <= 300:
+                return {"weight": val}
+        except:
+            pass
+        dispatcher.utter_message(response="utter_ask_weight")
+        return {"weight": None}
+
+    def validate_age(
+        self, slot_value, dispatcher, tracker, domain
+    ) -> Dict[Text, Any]:
+        try:
+            val = int(slot_value)
+            if 5 <= val <= 120:
+                return {"age": val}
+        except:
+            pass
+        dispatcher.utter_message(response="utter_ask_age")
+        return {"age": None}
+
+    def validate_goal_type(
+        self, slot_value, dispatcher, tracker, domain
+    ) -> Dict[Text, Any]:
+        if isinstance(slot_value, str) and slot_value.strip():
+            return {"goal_type": slot_value}
+        dispatcher.utter_message(response="utter_ask_goal")
+        return {"goal_type": None}
+
+
+class ActionSubmitProfile(Action):
+    def name(self) -> Text:
+        return "action_submit_profile"
 
     def run(
-        self, dispatcher: CollectingDispatcher,
+        self,
+        dispatcher: CollectingDispatcher,
         tracker: Tracker,
-        domain: Dict[Text, Any]
-    ) -> List:
-
-        # Slots aus dem Tracker
-        height = tracker.get_slot("height")
-        weight = tracker.get_slot("weight")
-        age    = tracker.get_slot("age")
-        goal   = tracker.get_slot("goal_type")
-
-        # 1) Falls Höhe noch fehlt
-        if height is None:
-            dispatcher.utter_message(response="utter_ask_height")
-            return []
-
-        # 2) Falls Gewicht noch fehlt
-        if weight is None:
-            dispatcher.utter_message(response="utter_ask_weight")
-            return []
-
-        # 3) Falls Alter fehlt
-        if age is None:
-            dispatcher.utter_message(response="utter_ask_age")
-            return []
-
-        # 4) Falls Ziel fehlt
-        if goal is None:
-            dispatcher.utter_message(response="utter_ask_goal")
-            return []
-
-        # 5) Alle Daten vollständig: in DB speichern
-        session = SessionLocal()
+        domain: Dict[Text, Any],
+    ) -> List[Dict[Text, Any]]:
+        # DB-Session öffnen
+        db: Session = SessionLocal()
+        user_id = tracker.sender_id
         profile = UserProfile(
-            user_id   = tracker.sender_id,
-            height    = float(height),
-            weight    = float(weight),
-            age       = int(age),
-            goal_type = goal
+            user_id=user_id,
+            height=tracker.get_slot("height"),
+            weight=tracker.get_slot("weight"),
+            age=tracker.get_slot("age"),
+            goal_type=tracker.get_slot("goal_type"),
         )
-        session.add(profile)
-        session.commit()
-        session.close()
-
+        db.add(profile)
+        db.commit()
+        db.close()
         dispatcher.utter_message(response="utter_profile_saved")
         return []
